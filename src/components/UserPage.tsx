@@ -134,3 +134,15 @@ export default function UserPage() {
     </main>
   );
 }
+
+/* 
+This code implements a basic User Management page using React and TypeScript, allowing users to be fetched, added, and deleted. It uses useState and useEffect hooks for state management and side effects, respectively, and integrates the sonner toast notification library to display success and error messages.
+
+The component manages three main states: users (an array of user objects), name, and email (for capturing form input values). The fetchUserData function is called within a useEffect to load the list of users when the page is first rendered. It uses the fetchUsers function from an external file (handlerUsers) to retrieve user data from an API, which is then set into the users state.
+
+The handleSubmit function processes the form submission to create a new user. It captures the inputted name and email, calls the createUser function to send a POST request, and displays a success or error toast based on the response. After the user is created, the fetchUserData function is called again to refresh the user list.
+
+Similarly, the handleDelete function deletes a user by sending a request via the deleteUser function, then refreshes the user list after the deletion is confirmed. Toast messages indicate whether the operation was successful or not.
+
+The JSX part of the component includes a form for adding new users and a list that displays the current users. If there are no users, a message is shown.
+*/

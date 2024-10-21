@@ -1,10 +1,10 @@
 import mysql from 'mysql2/promise';
 
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: 'S0r0f1gh@mysqltrae',
-  database: 'zeeofordb',
+  host: process.env.NEXT_PUBLIC_POOL_HOST,
+  user: process.env.NEXT_PUBLIC_POOL_USER,
+  password: process.env.NEXT_PUBLIC_POOL_PASSWORD,
+  database: process.env.NEXT_PUBLIC_POOL_DATABASE,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0

@@ -1,6 +1,6 @@
-# New CSS Features 2023-2024
+# Nextjs MySQL Fullstack App
 
-To stay updated with new CSS features that became mainstream after I first learned CSS and that I am not familiar with. My intention is to learn these features So I can code more efficiently.
+To enhance my full-stack development skills, I am transitioning from using non-relational databases (MongoDB) to relational databases (PostgreSQL, MySQL), in alignment with industry best practices.
 
 ## Table of contents
 
@@ -20,7 +20,11 @@ To stay updated with new CSS features that became mainstream after I first learn
 
 ### The Challenge/User Stories
 
-- Discuss each feature on a separate page, and navigate or route between them. Each page will include a definition, sample code, and an explanation of the sample code.
+- **For Users**:
+As a user, I want a simple and intuitive interface that allows me to perform basic actions such as creating, viewing, updating, and deleting records. I expect the system to provide real-time feedback when I add or update an entry, and I want to be able to remove records without hassle. The experience should be seamless, with changes immediately visible in the app.
+
+- **For Developers**:
+As a developer, this application demonstrates a full-stack setup using Next.js for both the frontend and API routes, combined with a MySQL database for the backend. The app implements CRUD functionality with a focus on clean and scalable code, ensuring data persistence and integrity. The backend is structured to handle database interactions efficiently, and the frontend delivers a user-friendly experience that reflects best practices for modern web development.
 
 ### Screenshot
 
@@ -28,8 +32,8 @@ To stay updated with new CSS features that became mainstream after I first learn
 
 ### Links
 
-- Solution URL: [https://github.com/traez/new-css-features-2023-2024](https://github.com/traez/new-css-features-2023-2024)
-- Live Site URL: [https://new-css-features-2023-2024.vercel.app/](https://new-css-features-2023-2024.vercel.app/)
+- Solution URL: [https://github.com/traez/nextjs-mysql-fullstack](https://github.com/traez/nextjs-mysql-fullstack)
+- Live Site URL: [https://nextjs-mysql-fullstack.vercel.app/](https://nextjs-mysql-fullstack.vercel.app/)
 
 ## My process
 
@@ -44,19 +48,24 @@ To stay updated with new CSS features that became mainstream after I first learn
 - Tailwind CSS
 - Typescript
 - Nodejs      
-- CSS Modules        
+- MySQL  
+- React Icons  
+- Sonner          
 
 ### What I learned
    
-- **Proper Use of module.css for Local CSS Scoping**  
-In my project, I used `module.css` for locally scoped CSS, ensuring that class names were specific to the component where they were defined. This allows me to reuse class names across different CSS files without conflicts, as each module's classes are scoped to the specific component they are applied to.  
-- **CSS Modules for Classes Only**  
-CSS Modules are specifically for class names. If you need to style HTML element tags (e.g., `h1`, `p`), those styles should be placed in a global CSS file, as they will apply globally across the entire project.  
-- **Combining Tailwind CSS with CSS Modules**  
-When using Tailwind CSS together with CSS Modules, you can combine class names by using template literals. This way, I can leverage the utility-first approach of Tailwind while also applying scoped styles from CSS Modules.
-`<div className={`${styles.grid} bg-blue-500 p-4`}>`  
-- **Referential Equality vs. Creating New Functions in Event Handlers**  
-Using `onChange={handleRouteChange}` is preferred in React components because it avoids creating a new function on every render. When you write `onChange={(e) => handleRouteChange(e)}`, a new inline function is created during each render, which can lead to unnecessary re-renders and increased memory usage. By sticking to the first approach, I ensure that referential equality is maintained, leading to better performance. 
+- **Transition from MongoDB (Non-relational) to MySQL (Relational)**  
+After using MongoDB, I revisited relational databases with MySQL, having last worked with Microsoft Access years ago. Both databases store data but differ significantly in structure. While MongoDB uses a flexible, document-based schema where fields can vary between records, MySQL requires a strict, table-based structure with clearly defined relationships between tables.   
+- **Amazon RDS Free Tier**  
+When using Amazon RDS (Relational Database Service), it's important to manage resources wisely. While it's possible to create multiple RDS instances under the Free Tier, their combined usage should not exceed 750 hours per month and 20 GB of storage. For my project, I created a single instance with the identifier `nextjs-mysql-fullstack`, which provided a host endpoint, username, and password for connecting to the database. The database name varies across projects to maintain isolation between them.    
+- **MySQL2 Dependency in Next.js**  
+I utilized the `mysql2` package as a MySQL client in my Next.js full-stack application. This dependency provides the tools needed to connect to the database, perform queries, and manage transactions, making it a critical part of the application’s database interaction layer.    
+- **HTML Input Type for Basic Validation**  
+By setting the `type="email"` attribute on an `<input>` element in my forms, I leveraged the browser’s built-in validation. This ensures that users enter a properly formatted email address without requiring additional JavaScript for basic validation.    
+- **Development vs Production: MySQL Workbench and Amazon RDS**  
+In development, I worked with MySQL Workbench as a local tool to visually manage databases and run queries. However, for production, I deployed the database on Amazon RDS, integrating it with Vercel for the Next.js application hosting. This setup allows for scalable production use, with the flexibility of RDS handling the database side.    
+- **API Testing in Production with Postman**  
+I've learned the importance of using API testing tools like Postman for testing API routes, even in production. These tools provide detailed feedback on your API’s behavior and responses, helping identify issues that might not be apparent through the user interface or logs alone.    
 
 ### Continued development
 

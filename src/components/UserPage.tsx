@@ -13,7 +13,6 @@ export default function UserPage() {
   const [users, setUsers] = useState<User[]>([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  console.log(users);
 
   useEffect(() => {
     fetchUserData();
@@ -57,7 +56,7 @@ export default function UserPage() {
   return (
     <main className="h-full bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-8">User Management</h1>
+        <h1 className="text-3xl font-bold text-center mb-8">Awa Ekrebe User Management</h1>
         <div className="bg-white shadow-md rounded-lg p-6 mb-8">
           <h2 className="text-xl font-semibold mb-4">Add New User</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
